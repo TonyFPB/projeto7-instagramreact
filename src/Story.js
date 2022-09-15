@@ -4,9 +4,9 @@ export default function Story() {
             <div class="imagem">
                 <img src="assets/img/9gag.svg"/>
             </div>
-            <div class="usuario"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            <div class="usuario">
                 9gag
-            </font></font></div>
+            </div>
         </div>
         )
 }
