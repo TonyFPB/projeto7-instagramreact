@@ -1,10 +1,17 @@
-export default function Post(){
+export default function Post(props){
+    // props.imgUser
+    // props.nameUser
+    // props.imgCont
+    //props.imgCurtido
+    // props.curtido
+    // props.cutidas
+
     return (
         <div class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img src="assets/img/meowed.svg" />
-                    miou
+                    <img src={props.imgUser} />
+                    {props.nameUser}
                 </div>
                 <div class="acoes">
                     <ion-icon name="ellipsis-horizontal" role="img" class="md hydrated" aria-label="reticências horizontais"></ion-icon>
@@ -12,7 +19,7 @@ export default function Post(){
             </div>
 
             <div class="conteudo">
-                <img src="assets/img/gato-telefone.svg" />
+                <img src={props.imgCont} />
             </div>
 
             <div class="fundo">
@@ -28,9 +35,9 @@ export default function Post(){
                 </div>
 
                 <div class="curtidas">
-                    <img src="assets/img/respondeai.svg" />
+                    <img src={props.imgCurtido} />
                     <div class="texto">
-                        Curtido por <strong>resposta</strong> e <strong>outras 101.523 pessoas</strong>
+                        Curtido por <strong>{props.curtido}</strong> e <strong>outras {props.curtidas} pessoas</strong>
                     </div>
                 </div>
             </div>
