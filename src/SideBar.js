@@ -3,10 +3,10 @@ import Usuario from "./Usuario";
 
 
 export default function SideBar(){
-    const dadosUser = {nome: 'catana', imagem:'assets/img/catanacomics.svg'}
+    const dadosUser = {nomeUser: 'catana', imagemUser:'assets/img/catanacomics.svg'}
     return(
         <div class ="sidebar">
-            <Usuario nomeUsuarioPrincipal = {dadosUser.nome} imgUsuarioPrincipal = {dadosUser.imagem}/>
+            <Usuario nomeUser = {dadosUser.nomeUser} imgUser = {dadosUser.imagemUser}/>
             <Sugetoes/>
             <div class="links">
                 Sobre • Ajuda • • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma

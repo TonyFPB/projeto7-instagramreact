@@ -8,7 +8,7 @@ export default function Posts() {
             imgPost: 'assets/img/gato-telefone.svg',
             imgCurtido: 'assets/img/respondeai.svg',
             curtido: 'respondeai',
-            curtidas: '101.523'
+            curtidas: '101523'
         },
         {
             nomeUser: 'latiu',
@@ -16,7 +16,7 @@ export default function Posts() {
             imgPost: 'assets/img/dog.svg',
             imgCurtido:'assets/img/adorable_animals.svg',
             curtido: 'adorável_animais',
-            curtidas: '99.159'
+            curtidas: '99159'
         }
     ]
     return (
