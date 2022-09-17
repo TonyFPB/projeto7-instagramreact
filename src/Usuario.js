@@ -8,7 +8,7 @@ export default function Usuario(props) {
     
     function mudaNome(){
         const novoNome = prompt('Qual o seu nome?')
-        if(novoNome !== ''){
+        if(novoNome !== '' && novoNome !== null){
             setNome(novoNome)
         }else{
             alert('Insira um nome valido!')
