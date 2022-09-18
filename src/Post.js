@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Post(props){
+export default function Post(props) {
     // props.imgUser
     // props.nameUser
     // props.imgCont
@@ -11,34 +11,57 @@ export default function Post(props){
     const [classGostei, setClassGostei] = useState('md hydrated')
     const [gosteiBool, setGosteiBool] = useState(false)
     const [nCurtidas, setNCutidas] = useState(props.curtidas)
+    const [contagem, setContagem] = useState(0)
 
-    function curtindo(){
-        
-        if(gosteiBool){
-            const novoNcurtidas = String(Number(nCurtidas.replace('.','')) - 1)
+    function curtindo() {
+
+        if (gosteiBool) {
+            const novoNcurtidas = String(Number(nCurtidas.replace('.', '')) - 1)
             setNCutidas(novoNcurtidas)
             setGosteiBool(false)
             setGostei('heart-outline')
             setClassGostei('md hydrated')
-        }else{
-            const novoNcurtidas = String(Number(nCurtidas.replace('.','')) + 1)
+            setContagem(0)
+        } else {
+            const novoNcurtidas = String(Number(nCurtidas.replace('.', '')) + 1)
             setNCutidas(novoNcurtidas)
             setGosteiBool(true)
             setGostei('heart')
             setClassGostei('like md hydrated')
+            setContagem(1)
         }
     }
-    
+
+
+    const [pulse, setPulse] = useState('heart-image md hydrated ')
+    function animacao() {
+        if (contagem === 0) {
+            setContagem(1)
+            const novoNcurtidas = String(Number(nCurtidas.replace('.', '')) + 1)
+            setPulse('heart-image md hydrated pulsar')
+            setNCutidas(novoNcurtidas)
+            setGosteiBool(true)
+            setGostei('heart')
+            setClassGostei('like md hydrated')
+            setTimeout(setPulse, 1000, 'heart-image md hydrated ')
+
+        } else {
+            setPulse('heart-image md hydrated pulsar')
+            setTimeout(setPulse, 1000, 'heart-image md hydrated ')
+        }
+
+    }
+
     const [salvar, setSalvar] = useState('bookmark-outline')
     const [classSalvar, setClassSalvar] = useState('md hydrated')
     const [salvarBool, setSalvarBool] = useState(false)
-    
-    function salvando(){
-        if(salvarBool){
+
+    function salvando() {
+        if (salvarBool) {
             setSalvarBool(false)
             setSalvar('bookmark-outline')
             setClassSalvar('md hydrated')
-        }else{
+        } else {
             setSalvarBool(true)
             setSalvar('bookmark')
             setClassSalvar('salvo md hydrated')
@@ -61,14 +84,15 @@ export default function Post(props){
                 </div>
             </div>
 
-            <div class="conteudo">
+            <div onDoubleClick={animacao} class="conteudo">
                 <img src={props.imgCont} />
+                <ion-icon class={pulse} name="heart"></ion-icon>
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon onClick={curtindo} name={gostei} role="img" class= {classGostei} aria-label="contorno do coração"></ion-icon>
+                        <ion-icon onClick={curtindo} name={gostei} role="img" class={classGostei} aria-label="contorno do coração"></ion-icon>
                         <ion-icon name="chatbubble-outline" role="img" class="md hydrated" aria-label="contorno do chatbubble"></ion-icon>
                         <ion-icon name="paper-plane-outline" role="img" class="md hydrated" aria-label="contorno de avião de papel"></ion-icon>
                     </div>
@@ -85,5 +109,5 @@ export default function Post(props){
                 </div>
             </div>
         </div>
-    )  
+    )
 } 

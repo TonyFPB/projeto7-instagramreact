@@ -183,6 +183,17 @@
   .post .conteudo img {
     width: 100%;
   }
+  .post .conteudo{
+    position: relative;
+  }
+  .post .conteudo .heart-image{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    font-size: 1px;
+    transition: font-size .5s;
+  }
   
   .post .fundo .acoes {
     display: flex;
@@ -314,8 +325,22 @@
     color: red;
   }
   .salvo{
-    color: gold
-    ;
+    color: gold;
+  }
+  .pulsar{
+    animation: scaling .9s forwards;
+    font-size: 200px;
+  }
+  @keyframes scaling{
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(300);
+    }
+    100%{
+      transform: scale(1);
+    }
   }
 
   @media (max-width: 935px) {
